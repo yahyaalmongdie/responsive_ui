@@ -11,7 +11,7 @@ class ListViewDrawerItem extends StatefulWidget {
 }
 
 class _ListViewDrawerItemState extends State<ListViewDrawerItem> {
-   int activeIndex = 0;
+  int activeIndex = 0;
   final List<DrawerItemModel> items = [
     DrawerItemModel(image: Assets.imagesDashboard, title: "Dashboard"),
     DrawerItemModel(image: Assets.imagesMytransaction, title: "My Transaction"),
@@ -26,17 +26,17 @@ class _ListViewDrawerItemState extends State<ListViewDrawerItem> {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-                              if (activeIndex != index) {
+              if (activeIndex != index) {
                 setState(() {
                   activeIndex = index;
                 });
-
-                              }
-
+              }
             },
             child: Padding(
               padding: const EdgeInsets.only(top: 20),
-              child: DrawerItem(isActive: activeIndex==index, drawerItemModel: items[index]),
+              child: DrawerItem(
+                  isActive: activeIndex == index,
+                  drawerItemModel: items[index]),
             ),
           );
         });
